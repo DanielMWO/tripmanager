@@ -1,5 +1,7 @@
 package pl.edu.agh.mwo;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert.*;
 import org.junit.Test;
 
@@ -14,7 +16,22 @@ public class TripManagerTest {
 		assertEguals(1, trip.getPhotos().size());
 		
 		
-		
 	}
+	
+	
+	@Test
+	public void addTripTest() {
+		TripManager tripManager = new TripManager();
+		Trip trip = new Trip();
+		assertEquals(0, tripManager.getTrip().size());
+		tripManager.addTrip();
+		assertEquals(1, tripManager.getTrip().size());
+		
+		
+		
+		
+				
+	}
+	
 	
 }
