@@ -13,16 +13,17 @@ public class TripManagerTest {
 		Photo photo = new Photo();
 		assertEquals(0, trip.getPhotos().size());
 		trip.addPhoto(photo);
-		assertEguals(1, trip.getPhotos().size());
+		assertEquals(1, trip.getPhotos().size());
 		
 		
 	}
 	
 	
+
+
 	@Test
 	public void addTripTest() {
 		TripManager tripManager = new TripManager();
-		Trip trip = new Trip();
 		assertEquals(0, tripManager.getTrip().size());
 		tripManager.addTrip();
 		assertEquals(1, tripManager.getTrip().size());

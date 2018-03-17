@@ -7,5 +7,10 @@ public class TripManager {
 		
 	}
 
+	public Trip getTrip() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
