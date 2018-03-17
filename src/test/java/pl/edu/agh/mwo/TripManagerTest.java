@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TripManagerTest {
 	
 	@Test
-	public void addPhotoTest {
+	public void addPhotoTest() {
 		Trip trip = new Trip();
 		Photo photo = new Photo();
 		assertEquals(0, trip.getPhotos().size());
