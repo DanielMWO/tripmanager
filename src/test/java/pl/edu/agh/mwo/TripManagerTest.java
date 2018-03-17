@@ -1,6 +1,7 @@
 package pl.edu.agh.mwo;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.Assert.*;
 import org.junit.Test;
@@ -10,7 +11,7 @@ public class TripManagerTest {
 	@Test
 	public void addPhotoTest() {
 		Trip trip = new Trip();
-		Photo photo = new Photo();
+		Photo photo = new Photo("Nowe");
 		assertEquals(0, trip.getPhotos().size());
 		trip.addPhoto(photo);
 		assertEquals(1, trip.getPhotos().size());
@@ -34,5 +35,11 @@ public class TripManagerTest {
 				
 	}
 	
+	@Test 
+	public void testPhotoName() {
+		Photo photo = new Photo("Nowe");
+		assertEquals("Nowe", photo.comment);
+	
+	}
 	
 }
