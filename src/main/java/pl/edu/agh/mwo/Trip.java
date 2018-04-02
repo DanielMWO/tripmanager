@@ -12,9 +12,6 @@ public class Trip {
 		
 	}
 
-	public int size() {
-		// TODO Auto-generated method stub
-		return 1;
-	}
+	
 
 }
