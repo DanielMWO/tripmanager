@@ -2,16 +2,19 @@ package pl.edu.agh.mwo;
 
 
 public class Photo {
-	public String comment;
+	private String comment;
 	
 	public Photo( String comment) {
-	this.comment = comment;
-		
+	this.setComment(comment);
 	}
 
-	public Object size() {
-		// TODO Auto-generated method stub
-		return null;
+	
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
 	}
 
 	
