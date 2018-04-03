@@ -12,7 +12,15 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TripManagerTest {
-	
+	Photo permPhoto;
+	TripManager permTripM;
+	Trip permTrip;
+	@Before  
+	public void setUp() throws Exception {
+		permPhoto = new Photo("Stale");
+		permTripM = new TripManager();
+		permTrip = new Trip("Stala wycieczka", "Permanentna wycieczka do testowania");
+}
 	@Test 
 	public void testNewPhoto() {
 		Photo photo = new Photo ("Foto");
@@ -32,13 +40,6 @@ public class TripManagerTest {
 	}
 	
 	
-	Photo permPhoto;
-	
-	@Before  
-	public void setUp() throws Exception {
-		permPhoto = new Photo("Stale");
-		
-	}
 	@Test 
 	public void testPhotoComment() {
 		assertEquals("Stale", permPhoto.getComment());
@@ -119,6 +120,39 @@ public class TripManagerTest {
 		assertEquals(3, trip4.getPhotos().size());
 	}
 	
+// TripManager Tests
+	
+	@Test
+	public void newTripManager() {
+		TripManager tripMInstance = new TripManager();
+			assertNotNull(tripMInstance);
+	}
+
+	@Test
+	public void addTrip() {
+		permTripM.addTrip(permTrip);
+		assertEquals(1, permTripM.trips.size());
+	}
+	@Test
+	public void removeNonExistingTrip() {
+		permTripM.removeTrip(permTrip);
+		assertEquals(0, permTripM.trips.size());
+	}
+	@Test
+	public void removeExistigTrip() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		permTripM.addTrip(trip);
+		permTripM.addTrip(permTrip);
+		permTripM.removeTrip(permTrip);
+		assertEquals(1, permTripM.trips.size());
+	}
+	@Test
+	public void getTripsList() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		permTripM.addTrip(trip);
+		permTripM.addTrip(permTrip);
+		assertEquals(2, permTripM.getTrips().size());
+	}
 	
 	
 }

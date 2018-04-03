@@ -15,7 +15,7 @@ public class Trip {
 	}
 	public List<Photo> getPhotos() {
 		
-		return photos;
+		return this.photos;
 	} 
 
 	public void addPhoto(Photo photo) {
@@ -24,7 +24,7 @@ public class Trip {
 	}
 
 	public String getName() {
-		return name;
+		return this.name;
 	}
 
 	public void setName(String name) {
@@ -32,7 +32,7 @@ public class Trip {
 	}
 
 	public String getDescription() {
-		return description;
+		return this.description;
 	}
 
 	public void setDescription(String description) {
