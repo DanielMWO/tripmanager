@@ -19,7 +19,7 @@ public class TripManagerTest {
 	public void setUp() throws Exception {
 		permPhoto = new Photo("Stale");
 		permTripM = new TripManager();
-		permTrip = new Trip("Stala wycieczka", "Permanentna wycieczka do testowania");
+		permTrip = new Trip("Stala Wycieczka", "Permanentna wycieczka do testowania All");
 }
 	@Test 
 	public void testNewPhoto() {
@@ -153,6 +153,45 @@ public class TripManagerTest {
 		permTripM.addTrip(permTrip);
 		assertEquals(2, permTripM.getTrips().size());
 	}
+	@Test
+	public void findOneTripsInList() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		permTripM.addTrip(trip);
+		permTripM.addTrip(permTrip);
+		assertEquals(1, permTripM.findTrip("Stala").size());
+	}
 	
+	@Test
+	public void findNoneTripsInList() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		permTripM.addTrip(trip);
+		permTripM.addTrip(permTrip);
+		assertEquals(0, permTripM.findTrip("Inne").size());
+	}
+	
+	@Test
+	public void findTwoTripsInList() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		Trip trip2 = new Trip ("Wycieczka","Bed and Breakfast");
+		permTripM.addTrip(trip);
+		permTripM.addTrip(trip2);
+		permTripM.addTrip(permTrip);
+		assertEquals(2, permTripM.findTrip("all").size());
+	}
+	@Test
+	public void findNonDuplicatesInDescriptionTripsInList() {
+		Trip trip = new Trip  ("Wycieczka"," Wycieczka all Ilcsusive");
+		Trip trip2 = new Trip ("Wyjazd"," Wycieczka Bed and Breakfast");
+		Trip trip3 = new Trip ("Wyjazd","Bed and Breakfast");
+		Trip trip4 = new Trip ("Wycieczka","Bed and Breakfast");
+		Trip trip5 = new Trip ("Wycieczka","Bed and Breakfast Wycieczka");
+		permTripM.addTrip(trip);
+		permTripM.addTrip(trip2);
+		permTripM.addTrip(trip3);
+		permTripM.addTrip(trip4);
+		permTripM.addTrip(trip5);
+		permTripM.addTrip(trip5);
+		assertEquals(4, permTripM.findTrip("Wycieczka").size());
+	}
 	
 }
