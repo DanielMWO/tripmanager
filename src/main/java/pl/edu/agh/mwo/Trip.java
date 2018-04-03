@@ -13,9 +13,9 @@ public class Trip {
 		this.name = name;
 		this.description = description;
 	}
-	public Photo getPhotos() {
+	public List<Photo> getPhotos() {
 		
-		return null;
+		return photos;
 	} 
 
 	public void addPhoto(Photo photo) {

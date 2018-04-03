@@ -13,12 +13,24 @@ import org.junit.Test;
 
 public class TripManagerTest {
 	
+	@Test 
+	public void testNewPhoto() {
+		Photo photo = new Photo ("Foto");
+		assertNotNull(photo);
+			}
+
+	@Test 
+	public void testNewPhotoComment() {
+		Photo photo = new Photo("Nowe");
+		assertEquals("Nowe", photo.comment);
+	}
 	
 	@Test 
-	public void testnewPhotoComment() {
+	public void testGetNewPhotoComment() {
 		Photo photo = new Photo("Nowe");
 		assertEquals("Nowe", photo.getComment());
-		}
+	}
+	
 	
 	Photo permPhoto;
 	
@@ -41,13 +53,53 @@ public class TripManagerTest {
 	//Trip Tests
 
 
-
 	@Test 
-	public void testnewTrip() {
+	public void testNewTrip() {
 		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
 		assertNotNull(trip);
+
 	}
 
+	@Test 
+	public void testNewTripName() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		assertEquals("Wycieczka",trip.name );
+		
+	}
+		
+	
+	@Test 
+	public void testNewTripDescription() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		assertEquals("All Ilcsusive",trip.description );
+		
+	}
+
+	@Test 
+	public void testGetNewTripDescription() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		assertEquals("All Ilcsusive",trip.getDescription() );
+	}
+	
+
+	@Test 
+	public void testSetNewTripName() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		trip.setName("Mega Wycieczka");
+		assertEquals("Mega Wycieczka",trip.getName());
+		
+	}
+
+	@Test 
+	public void testGetNewTripDescriptiom() {
+		Trip trip = new Trip ("Wycieczka","All Ilcsusive");
+		trip.setDescription("B&B");
+		assertEquals("B&B",trip.getDescription());
+		
+	}
+	
+	
+	
 	
 	@Test 
 	public void addPhoto() {
@@ -55,5 +107,18 @@ public class TripManagerTest {
 		trip3.addPhoto(permPhoto);
 		assertEquals(1, trip3.photos.size());
 	}
+	
+	@Test 
+	public void getPhotos() {
+		Trip trip4 = new Trip ("Wycieczka","All Ilcsusive");
+		Photo photo = new Photo("Nowe");
+		Photo photo2 = new Photo("Nowe2");
+		trip4.addPhoto(permPhoto);
+		trip4.addPhoto(photo);
+		trip4.addPhoto(photo2);
+		assertEquals(3, trip4.getPhotos().size());
+	}
+	
+	
 	
 }
