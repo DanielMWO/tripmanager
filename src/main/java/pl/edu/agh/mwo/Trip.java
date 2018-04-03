@@ -1,15 +1,42 @@
 package pl.edu.agh.mwo;
 
-public class Trip {
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
+public class Trip {
+	public String name;
+	public String description;
+	protected List<Photo> photos = new ArrayList<Photo>();
+	 
+	public Trip (String name, String description) {
+		this.name = name;
+		this.description = description;
+	}
 	public Photo getPhotos() {
-		// TODO Auto-generated method stub
+		
 		return null;
 	} 
 
 	public void addPhoto(Photo photo) {
-		// TODO Auto-generated method stub
+		this.photos.add(photo); 
 		
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	

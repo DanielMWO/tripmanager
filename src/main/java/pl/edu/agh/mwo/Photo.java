@@ -2,10 +2,10 @@ package pl.edu.agh.mwo;
 
 
 public class Photo {
-	private String comment;
+	public String comment;
 	
 	public Photo( String comment) {
-	this.setComment(comment);
+	this.comment = comment;
 	}
 
 	
