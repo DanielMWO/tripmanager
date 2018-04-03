@@ -28,7 +28,7 @@ public class TripManager {
 		List<Trip> result2 = this.trips.stream().filter(t -> t.description.toString().toLowerCase().contains(keyword.toLowerCase())).collect(Collectors.toList());
 		result.removeAll(result2);
 		result.addAll(result2);
-		return result;
+	    return result;
 	}
 	
 

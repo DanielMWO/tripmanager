@@ -1,14 +1,8 @@
 package pl.edu.agh.mwo;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertThat;
-
-import org.junit.Assert.*;
 import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class TripManagerTest {
@@ -189,7 +183,6 @@ public class TripManagerTest {
 		permTripM.addTrip(trip2);
 		permTripM.addTrip(trip3);
 		permTripM.addTrip(trip4);
-		permTripM.addTrip(trip5);
 		permTripM.addTrip(trip5);
 		assertEquals(4, permTripM.findTrip("Wycieczka").size());
 	}
